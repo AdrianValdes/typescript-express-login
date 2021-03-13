@@ -1,8 +1,9 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import { router } from './routes/loginRoutes';
 
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
 app.use(router);
 
 app.listen(5005, () => {
